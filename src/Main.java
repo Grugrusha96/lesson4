@@ -192,18 +192,27 @@
 //        }
 //    }
 //}
+//import java.util.Arrays;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        int[] array = {6, 3, -2, 8, -10, 14, -16, -15};
+//        System.out.println("Массив: " + Arrays.toString(array));
+//
+//        for (int i = 0; i < array.length; i++) {
+//            if (i % 2 != 0) {
+//                array[i] = 0;
+//            }
+//        }
+//        System.out.println("не четные замена на 0: " + Arrays.toString(array));
+//    }
+//}
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] array = {6, 3, -2, 8, -10, 14, -16, -15};
-        System.out.println("Массив: " + Arrays.toString(array));
-
-        for (int i = 0; i < array.length; i++) {
-            if (i % 2 != 0) {
-                array[i] = 0;
-            }
-        }
-        System.out.println("не четные замена на 0: " + Arrays.toString(array));
+        String[] array = {"Коля", "Женя", "Соня", "Митя", "Калина"};
+        Arrays.sort(array);
+        System.out.println("Массив после сортировки: " + Arrays.toString(array));
     }
 }
