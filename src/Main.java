@@ -113,40 +113,82 @@
 //
 //    }
 //}
+//import java.util.Arrays;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//           int[] array1 = {10, 4, 15, 6, 14};
+//           int[] array2 = {11, 3, 6, 7, 1};
+//
+//             System.out.print("Массив 1: ");
+//             System.out.println(Arrays.toString(array1));
+//
+//             System.out.print("Массив 2: ");
+//             System.out.println(Arrays.toString(array2));
+//
+//        System.out.println("Среднее значение массива 1: " + average(array1));
+//        System.out.println("Среднее значение массива 2: " + average(array2));
+//
+//                    if (average(array1) < average(array2)) {
+//            System.out.println("Среднее значение второго массива больше ");
+//        } else if (average(array1) > average(array2)) {
+//            System.out.println("Среднее значение первого массива больше ");
+//        } else System.out.println("Средние значения равны!");
+//
+//
+//    }
+//
+//    private static double average(int[] array) {
+//        int sum = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            sum += array[i];
+//        }
+//        double average = (double) sum / array.length;
+//        return average;
+//    }
+//}
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-           int[] array1 = {10, 4, 15, 6, 14};
-           int[] array2 = {11, 3, 6, 7, 1};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите размер массива (от < 5 до 10 включительно): ");
+        int size;
+        do {
+            while (!scanner.hasNextInt()) {
+                System.out.println("от < 5 до 10 включительно... Повторите ввод!");
+                scanner.next();
+            }
+            size = scanner.nextInt();
+            if (size > 10 || size > 10) {
+                System.out.println("от < 5 до 10 включительно... Повторите ввод!");
+            }
+        } while (size > 10 || size > 10);
 
-             System.out.print("Массив 1: ");
-             System.out.println(Arrays.toString(array1));
-
-             System.out.print("Массив 2: ");
-             System.out.println(Arrays.toString(array2));
-
-        System.out.println("Среднее значение массива 1: " + average(array1));
-        System.out.println("Среднее значение массива 2: " + average(array2));
-
-                    if (average(array1) < average(array2)) {
-            System.out.println("Среднее значение второго массива больше ");
-        } else if (average(array1) > average(array2)) {
-            System.out.println("Среднее значение первого массива больше ");
-        } else System.out.println("Средние значения равны!");
-
-
-    }
-
-    private static double average(int[] array) {
-        int sum = 0;
+        int[] array = new int[size];
         for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+            array[i] = (int) (Math.random() * 100);
         }
-        double average = (double) sum / array.length;
-        return average;
+        System.out.println(Arrays.toString(array));
+
+        int count = 0;
+        for (int number : array) {
+            if (number % 2 == 0) {
+                count++;
+            }
+        }
+
+        if (count == 0) {
+            System.out.println("Четных элементов нет");
+        } else {
+            int[] arrayOfEven = new int[count];
+            for (int j = 0, readNumber = 0; readNumber < array.length; readNumber++) {
+                if (array[readNumber] % 2 == 0) {
+                    arrayOfEven[j++] = array[readNumber];
+                }
+            }
+            System.out.println(Arrays.toString(arrayOfEven));
+        }
     }
 }
-
-
-
