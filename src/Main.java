@@ -207,12 +207,37 @@
 //        System.out.println("не четные замена на 0: " + Arrays.toString(array));
 //    }
 //}
+//import java.util.Arrays;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        String[] array = {"Коля", "Женя", "Соня", "Митя", "Калина"};
+//        Arrays.sort(array);
+//        System.out.println("Массив после сортировки: " + Arrays.toString(array));
+//    }
+//}
 import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        String[] array = {"Коля", "Женя", "Соня", "Митя", "Калина"};
-        Arrays.sort(array);
-        System.out.println("Массив после сортировки: " + Arrays.toString(array));
+        int[] array = {6, 7, 10, 34, -8, -17};
+
+        System.out.println("до сортировки: " + Arrays.toString(array));
+        bubbleSort(array);
+        System.out.println("после сортировки: " + Arrays.toString(array));
+    }
+
+    public static void bubbleSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+
+                }
+            }
+        }
     }
 }
