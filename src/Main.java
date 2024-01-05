@@ -57,63 +57,96 @@
 //
 //    }
 //}
+//import java.util.Arrays;
+//import java.util.Random;
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.print("размер массива: ");
+//        if (!scanner.hasNextInt()) {
+//            System.out.println("Размер массива должен быть целым числом.");
+//            return;
+//        }
+//
+//        int size = scanner.nextInt();
+//        if (size <= 0) {
+//            System.out.println("Размер массива должен быть положительным числом.");
+//            return;
+//        }
+//
+//        int[] array = new int[size];
+//
+//        Random random = new Random();
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = random.nextInt(101) - 50;
+//        }
+//
+//        System.out.println("Массив: " + Arrays.toString(array));
+//
+//        int min = array[0];
+//        for (int i = 0; i < array.length; i++) {
+//            if (min > array[i]) {
+//                min = array[i];
+//            }
+//        }
+//        int max = array[0];
+//        for (int i = 0; i < array.length; i++) {
+//            if (max < array[i]) {
+//                max = array[i];
+//            }
+//        }
+//
+//
+//
+//        int sum = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            sum += array[i];
+//        }
+//        double average = (double) sum / array.length;
+//
+//        System.out.println("Минимальное значение: " + min);
+//        System.out.println("Максимальное значение: " + max);
+//        System.out.println("Среднее значение: " + average);
+//
+//    }
+//}
 import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+           int[] array1 = {10, 4, 15, 6, 14};
+           int[] array2 = {11, 3, 6, 7, 1};
 
-        System.out.print("размер массива: ");
-        if (!scanner.hasNextInt()) {
-            System.out.println("Размер массива должен быть целым числом.");
-            return;
-        }
+             System.out.print("Массив 1: ");
+             System.out.println(Arrays.toString(array1));
 
-        int size = scanner.nextInt();
-        if (size <= 0) {
-            System.out.println("Размер массива должен быть положительным числом.");
-            return;
-        }
+             System.out.print("Массив 2: ");
+             System.out.println(Arrays.toString(array2));
 
-        int[] array = new int[size];
+        System.out.println("Среднее значение массива 1: " + average(array1));
+        System.out.println("Среднее значение массива 2: " + average(array2));
 
-        Random random = new Random();
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(101) - 50;
-        }
-
-        System.out.println("Массив: " + Arrays.toString(array));
-
-        int min = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (min > array[i]) {
-                min = array[i];
-            }
-        }
-        int max = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (max < array[i]) {
-                max = array[i];
-            }
-        }
+                    if (average(array1) < average(array2)) {
+            System.out.println("Среднее значение второго массива больше ");
+        } else if (average(array1) > average(array2)) {
+            System.out.println("Среднее значение первого массива больше ");
+        } else System.out.println("Средние значения равны!");
 
 
+    }
 
+    private static double average(int[] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
         double average = (double) sum / array.length;
-
-        System.out.println("Минимальное значение: " + min);
-        System.out.println("Максимальное значение: " + max);
-        System.out.println("Среднее значение: " + average);
-
+        return average;
     }
 }
-
 
 
 
